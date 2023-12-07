@@ -74,7 +74,6 @@ inputs:
       description: The token is required to access the Infisical project via the API
       is_expand: true
       is_required: true
-      value_options: []
   - infisical_env:
     opts:
       title: "Infisical Env"
@@ -82,7 +81,6 @@ inputs:
       description: The env is required to match the env specified in the token above to provide access to the required secrets
       is_expanded: true
       is_required: true
-      value_options: []
   - infisical_url: "https://app.infisical.com"
     opts:
       title: "Infisical URL"
@@ -91,7 +89,6 @@ inputs:
         required and should only consists of the hostname and TLD
       is_expanded: true
       is_required: true
-      value_options: []
   - infisical_path:
     opts:
       title: "Infisical Path"
@@ -99,7 +96,6 @@ inputs:
       description: The path or folder structure required to access your secrets within Infisical
       is_expanded: true
       is_required: false
-      value_options: []
 
 
 
