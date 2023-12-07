@@ -77,7 +77,6 @@ func main() {
 		// A very simple example:
 		cmdLog, err := exec.Command("bitrise", "envman", "add", "--key", secret.Key, "--value",
 			secret.Value).CombinedOutput()
-		fmt.Printf("%+v\n", cmdLog)
 		if err != nil {
 			fmt.Printf("Failed to expose output with envman, error: %#v | output: %s", err, cmdLog)
 			os.Exit(1)
