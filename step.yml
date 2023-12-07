@@ -10,9 +10,9 @@
 title: |-
   Infisical-secrets
 summary: |
-  Pull secrets from an infisical secrets repository
+  Pull secrets from an Infisical secrets repository
 description: |
-  Use this step to access your cloud or self hosted infisical secrets and inject them into your pipeline.
+  Use this step to access your cloud or self hosted Infisical secrets and inject them into your build pipeline.
 website: https://github.com/CodeFishStudio/bitrise-step-infisical-secrets
 source_code_url: https://github.com/CodeFishStudio/bitrise-step-infisical-secrets
 support_url: https://github.com/CodeFishStudio/bitrise-step-infisical-secrets/issues
@@ -67,24 +67,39 @@ toolkit:
 
 
 inputs:
-  - example_step_input: Default Value - you can leave this empty if you want to
+  - infisical_token:
     opts:
-      title: "Example Step Input"
-      summary: Summary. No more than 2-3 sentences.
-      description: |
-        Description of this input.
-
-        Can be Markdown formatted text.
+      title: "Infisical Token"
+      summary: The project specific access token from Infisical
+      description: The token is required to access the Infisical project via the API
       is_expand: true
       is_required: true
       value_options: []
-
-outputs:
-  - EXAMPLE_STEP_OUTPUT:
+  - infisical_env:
     opts:
-      title: "Example Step Output"
-      summary: Summary. No more than 2-3 sentences.
-      description: |
-        Description of this output.
+      title: "Infisical Env"
+      summary: "The slug for your project environment"
+      description: The env is required to match the env specified in the token above to provide access to the required secrets
+      is_expanded: true
+      is_required: true
+      value_options: []
+  - infisical_url: "https://app.infisical.com"
+    opts:
+      title: "Infisical URL"
+      summary: The url of the API to access your Infisical secrets
+      description: The fully qualified URL to access your Infisical secrets. The trailing slash or /api is not 
+        required and should only consists of the hostname and TLD
+      is_expanded: true
+      is_required: true
+      value_options: []
+  - infisical_path:
+    opts:
+      title: "Infisical Path"
+      summary: The path to the required secrets
+      description: The path or folder structure required to access your secrets within Infisical
+      is_expanded: true
+      is_required: false
+      value_options: []
 
-        Can be Markdown formatted text.
+
+
