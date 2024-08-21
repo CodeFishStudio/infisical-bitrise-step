@@ -8,7 +8,7 @@
 # - Bitrise CLI guides: http://devcenter.bitrise.io/bitrise-cli/
 
 title: |-
-  Infisical-secrets
+  Infisical Secrets
 summary: |
   Pull secrets from an Infisical secrets repository
 description: |
@@ -67,11 +67,25 @@ toolkit:
 
 
 inputs:
-  - infisical_token:
+  - infisical_client:
     opts:
-      title: "Infisical Token"
-      summary: The project specific access token from Infisical
-      description: The token is required to access the Infisical project via the API
+      title: "Infisical Client ID"
+      summary: The client ID from infisical.
+      description: The client ID is required to identify the machine identity from Infisical
+      is_expand: true
+      is_required: true
+  - infisical_client_secret:
+    opts:
+      title: "Infisical Client Secret"
+      summary: The client secret from infisical.
+      description: The client secret is required to authenticate the machine identity from Infisical
+      is_expand: true
+      is_required: true
+  - infisical_project_id:
+    opts:
+      title: "Infisical Project ID"
+      summary: The project ID from infisical.
+      description: The project ID is required to access the correct project from Infisical
       is_expand: true
       is_required: true
   - infisical_env:
@@ -81,14 +95,14 @@ inputs:
       description: The env is required to match the env specified in the token above to provide access to the required secrets
       is_expanded: true
       is_required: true
-  - infisical_url: "https://app.infisical.com"
+  - infisical_url:
     opts:
       title: "Infisical URL"
       summary: The url of the API to access your Infisical secrets
       description: The fully qualified URL to access your Infisical secrets. The trailing slash or /api is not 
-        required and should only consists of the hostname and TLD
+        required and should only consist of the hostname and TLD. Defaults to the cloud API url.
       is_expanded: true
-      is_required: true
+      is_required: false
   - infisical_path:
     opts:
       title: "Infisical Path"
