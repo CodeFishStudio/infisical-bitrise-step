@@ -27,9 +27,11 @@ An example `.bitrise.secrets.yml` file:
 
 ```
 envs:
-- infisical_token: "The service token for your infisical project"
+- infisical_client: "The client ID from infisical"
+- infisical_client_secret: "Infisical Client Secret"
+- infisical_project_id: "Infisical Project ID"
 - infisical_env: "The slug of the environment you whish to access for your given project"
-- infisical_url: "The url of the infisical environment you wish to access"
+- infisical_url: "The url of the infisical environment you wish to access, defaults to cloud environment"
 - infisical_path: "Path to the secrets within your project"
 ```
 

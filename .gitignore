@@ -3,3 +3,4 @@
 .vscode
 README.md.backup
 _tmp/
+/.git-credentials

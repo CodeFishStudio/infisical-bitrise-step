@@ -5,13 +5,19 @@ app:
   envs:
   # If you want to share this step into a StepLib
   - BITRISE_STEP_ID: infisical-secrets
-  - BITRISE_STEP_VERSION: "0.0.1"
+  - BITRISE_STEP_VERSION: "0.0.2"
   - BITRISE_STEP_GIT_CLONE_URL: https://github.com/CodeFishStudio/bitrise-step-infisical-secrets.git
   - MY_STEPLIB_REPO_FORK_GIT_URL: $MY_STEPLIB_REPO_FORK_GIT_URL
 
 workflows:
   test:
     steps:
+#    - script:
+#        inputs:
+#          - content: |-
+#              #!/bin/bash
+#              echo "client : ${infisical_client}"
+#              echo "client secret: ${infisical_client_secret}"
     - change-workdir:
         title: Switch working dir to test / _tmp dir
         description: |-
@@ -32,7 +38,12 @@ workflows:
           file if you would not specify another value.
         run_if: true
         inputs:
-        - example_step_input: Example Step Input's value
+          - infisical_client: ${infisical_client}
+          - infisical_client_secret: ${infisical_client_secret}
+          - infisical_project_id: ${infisical_project_id}
+          - infisical_env: ${infisical_env}
+          - infisical_url: ${infisical_url}
+          - infisical_path: ${infisical_path}
 
   # ----------------------------------------------------------------
   # --- workflows to Share this step into a Step Library
