@@ -1,6 +1,6 @@
 module github.com/CodeFishStudio/bitrise-step-infisical-secrets
 
-go 1.19
+go 1.21
 
 require (
 	github.com/infisical/go-sdk v0.3.3
