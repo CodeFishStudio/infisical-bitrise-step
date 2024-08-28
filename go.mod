@@ -2,9 +2,8 @@ module github.com/CodeFishStudio/bitrise-step-infisical-secrets
 
 go 1.19
 
-require github.com/infisical/go-sdk v0.3.3
-
 require (
+	github.com/infisical/go-sdk v0.3.3
 	cloud.google.com/go/auth v0.7.0 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.2 // indirect
 	cloud.google.com/go/compute/metadata v0.4.0 // indirect
